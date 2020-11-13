@@ -3,8 +3,8 @@ from django.http import HttpResponse,Http404
 import datetime as dt
 
 # Create your views here.
-def welcome(request):
-    return render(request, 'welcome.html')
+# def welcome(request):
+#     return render(request, 'welcome.html')
 
 def convert_dates(dates):
 
@@ -36,4 +36,4 @@ def previous_days_photos(request, previous_date):
     if date == dt.date.today():
         return redirect(photos_of_day)
 
-    return render(request, 'all_photos/previous_news.html', {"date": date})
+    return render(request, 'all-photos/previous-news.html', {"date": date})
