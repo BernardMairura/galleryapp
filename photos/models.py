@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -34,15 +35,20 @@ class Category(models.Model):
         self.save()
 
 class Image(models.Model):
-    title = models.CharField(max_length =60)
+    image = models.ImageField(upload_to = 'images/', null=True)
+    name = models.CharField(max_length =60)
     description = models.TextField()
     Location = models.ForeignKey(Location, on_delete=models.CASCADE)
     Category=models.ForeignKey(Category,on_delete=models.CASCADE)
-    pub_date = models.DateTimeField(auto_now_add=True)
-    # image = models.ImageField(upload_to = 'images/')
+    created = models.DateTimeField(auto_now_add=True)
+    modified=models.DateTimeField(auto_now_add=True)
+    
 
     def __str__(self):
         return self.title
+
+    def save_Image(self):
+        self.save()
 
     class Meta:
         ordering = ['Category']
