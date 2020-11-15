@@ -17,10 +17,10 @@ class User(models.Model):
 
 
 class Location(models.Model):
-    name = models.CharField(max_length =30)
+    location_name = models.CharField(max_length =30)
 
     def __str__(self):
-        return self.name
+        return self.location_name
 
     def save_location(self):
         self.save()
@@ -33,10 +33,10 @@ class Location(models.Model):
         cls.objects.filter(id=id).update(location_name=value)
 
 class Category(models.Model):
-    name=models.CharField(max_length=60)
+    category_name=models.CharField(max_length=60)
 
     def __str__(self):
-        return self.name
+        return self.category_name
 
     def save_Category(self):
         self.save()
@@ -45,8 +45,9 @@ class Category(models.Model):
     def delete_category(self):
         self.delete()
 
-    def update_category(self):
-        self.update()
+    @classmethod
+    def update_image(cls, id, value):
+        cls.objects.filter(id=id).update(category_name=value)
 
 class Image(models.Model):
     image = models.ImageField(upload_to = 'images/', null=True)
@@ -83,14 +84,19 @@ class Image(models.Model):
         return image
 
     @classmethod
-    def search_image(cls,category):
-        image = Image.objects.filter(category=Category)
+    def search_image(cls,category_name):
+        image = Image.objects.filter(category_name=Category)
         return image
 
     @classmethod
     def filter_by_location(cls,Location):
-        image=Image.objects.filter(location=Location)
+        image=Image.objects.filter(location_name=Location)
         return image
+
+    @classmethod
+    def search_by_category(cls, search_term):
+        photos = cls.objects.filter(category__category_name__icontains=search_term)
+        return photos
 
 
    

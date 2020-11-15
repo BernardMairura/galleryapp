@@ -4,18 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  
 
-  {% if title %}
-  <title>Gallery Application - {{title}}</title>
-  {% else %}
-    <title> Gallery Appliation </title>
-  {% endif %}
+  <title>Gallery Application</title>
 
   {% block styles %}
     {% bootstrap_css %}
+    
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    
   {% endblock %}
+  
 
 </head>
 <body>

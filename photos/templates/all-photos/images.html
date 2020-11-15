@@ -5,7 +5,7 @@
         <div class="row">
             {% for image in images%}
                 <div class="col-md-3">
-                    <img src="{{image.image_url.url}}" class="img img-responsive img-thumbnail" style="height: 180px; width:300px;"
+                    <img src="{{image.image.url}}" class="img img-responsive " style="height: 180px; width:300px;"
                      class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal{{forloop.counter}}">
                 </div>
 
@@ -20,7 +20,7 @@
                                 <h4 class="modal-title  text-capitalize">{{image.name}}</h4>
                             </div>
                             <div class="modal-body">
-                                <img src="{{image.image_url.url}}" class="img img-responsive img-responsive"><br><br>
+                                <img src="{{image.image.url}}" class="img img-responsive img-responsive"><br><br>
                                 <p class="lead">Category: <span class="label label-default text-capitalize">{{image.category}}</span></p>
                                 <p class=" lead">{{image.description}}.</p>
                             </div>

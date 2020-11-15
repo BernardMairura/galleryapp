@@ -9,20 +9,20 @@ def my_images(request):
     images=Image.objects.all()
     return render(request,'all-photos/images.html',{"images":images})
 
-# def convert_dates(dates):
+def convert_dates(dates):
 
-#     # Function that gets the weekday number for the date.
-#     day_number = dt.date.weekday(dates)
+    # Function that gets the weekday number for the date.
+    day_number = dt.date.weekday(dates)
 
-#     days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday',"Sunday"]
+    days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday',"Sunday"]
 
-#     # Returning the actual day of the week
-#     day = days[day_number]
-#     return day
+    # Returning the actual day of the week
+    day = days[day_number]
+    return day
 
-# def photos_of_day(request):
-#     date = dt.date.today()
-#     return render(request, 'all-photos/today-photos.html', {"date": date,})
+def photos_of_day(request):
+    date = dt.date.today()
+    return render(request, 'all-photos/today-photos.html', {"date": date,})
 
 
 # View Function to present photos from the previous days
@@ -47,7 +47,8 @@ def search_results(request):
 
     if 'category' in request.GET and request.GET["category"]:
         search_term = request.GET.get("category")
-        searched_images = Image.search_title(search_term)
+        searched_images = Image.search_image(search_term)
+        print(searched_images)
         message = f"{search_term}"
 
         return render(request, 'all-photos/search.html',{"message":message,"images": searched_images})
