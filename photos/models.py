@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -50,7 +51,8 @@ class Category(models.Model):
         cls.objects.filter(id=id).update(category_name=value)
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'images/', null=True)
+    # image = models.ImageField(upload_to = 'images/', null=True)
+    image=CloudinaryField('image', null=True)
     name = models.CharField(max_length =60)
     description = models.TextField()
     location = models.ForeignKey(Location, on_delete=models.CASCADE)

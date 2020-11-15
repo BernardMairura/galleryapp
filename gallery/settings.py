@@ -190,7 +190,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 #setting configuration parameters globally in your Django application:
 cloudinary.config( 
-  cloud_name = "sample", 
-  api_key = "874837483274837", 
-  api_secret = "a676b67565c6767a6767d6767f676fe1" 
+  cloud_name = "mairura", 
+  api_key = "844111928628499", 
+  api_secret = "xDB1YSE-r6e5TlKp03J3Nh-XuEc" 
 )
