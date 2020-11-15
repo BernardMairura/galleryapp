@@ -36,7 +36,7 @@ The topics or modules covered in this project include but not limited to;
 * [cloudinary](https://cloudinary.com/)
 * [Github](https://github.com/BernardMairura/galleryapp)
 * [Heroku](https://gallery-mairura.herokuapp.com/)
-* [Figma](https://www.figma.com/file/ydMIiZzNVtIDOCfBTOjOWL/TaxApp?node-id=0%3A1)
+* [Figma](https://www.figma.com/file/Fy2CNrT8kuIgiBDpUHqvZF/Untitled?node-id=0%3A1)
 
 ## Support and contact details
 
