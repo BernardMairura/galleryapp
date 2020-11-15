@@ -31,7 +31,9 @@ Its there by default on Linux but can be downloaded and installed on other platf
 
 The topics or modules covered in this project include but not limited to;
 
-* python 3.9
+* [python](https://www.python.org/downloads/release/python-385/)
+* [Django](https://www.djangoproject.com/download/)
+* [cloudinary](https://cloudinary.com/)
 * [Github](https://github.com/BernardMairura/galleryapp)
 * [Heroku](https://gallery-mairura.herokuapp.com/)
 * [Figma](https://www.figma.com/file/ydMIiZzNVtIDOCfBTOjOWL/TaxApp?node-id=0%3A1)
