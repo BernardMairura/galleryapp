@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404
 import datetime as dt
-from .models import Image,Category
+from .models import Image,Category,Location
 
 # Create your views here.
 
@@ -60,7 +60,7 @@ def search_results(request):
 
 def image_details(request,image_id):
     try:
-        image = Image.objects.get(Image,id = image_id)
+        image = Image.objects.get(id = image_id)
     except ObjectDoesNotExist:
         raise Http404()
     return render(request,"all-photos/details.html", {"image":image})
