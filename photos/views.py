@@ -51,16 +51,16 @@ def search_results(request):
         print(searched_images)
         message = f"{search_term}"
 
-        return render(request, 'all-photos/search.html',{"message":message,"images": searched_images})
+        return render(request, 'all-photos/search.html',{"message":message,"searched_images": searched_images})
 
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-photos/search.html',{"message":message})
 
 
-def MyImage(request,image_id):
+def image_details(request,image_id):
     try:
         image = Image.objects.get(Image,id = image_id)
     except ObjectDoesNotExist:
         raise Http404()
-    return render(request,"all-photos/images.html", {"image":image})
+    return render(request,"all-photos/details.html", {"image":image})

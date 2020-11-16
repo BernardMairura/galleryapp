@@ -16,7 +16,9 @@
   {% if searched_images %}
     {% for image in searched_images %}
       <div class="col-sm-6 col-md-3">
-          <a href="{% url 'MyImage' image.id%}"><h1>{{image.category}}</h1></a>
+          <a href="{% url 'image_details' image.id%}"><h1>{{image.category}}</h1></a>
+          <div>{{image.name}}</div>
+          <div><img src="{{image.image.url}}" class="img img-responsive img-responsive"></div>
       </div>
     {% endfor %}
   {% endif %}
